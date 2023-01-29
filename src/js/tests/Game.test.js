@@ -10,7 +10,6 @@ test('should return a new object Game', () => {
     img: src,
   };
   const result = new Game(src);
-
   expect(result).toEqual(expected);
 });
 
