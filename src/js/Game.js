@@ -1,6 +1,5 @@
 import Board from './Board';
 
-
 export default class Game {
   constructor(img) {
     this.counter = 0;
@@ -57,7 +56,6 @@ export default class Game {
     const fieldSize = 4;
     const field = new Board(fieldSize);
     const img = field.start(this.img);
-    
     this.addEvent();
 
     setInterval(() => {
