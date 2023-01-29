@@ -16,6 +16,6 @@ test('should return a new object Game', () => {
 test('should return a number less than fieldSize**2 ', () => {
   const action = new Game(src);
   const max = fieldSize ** 2;
-  const result = action.getRandom(max);  
+  const result = action.getRandom(max);
   expect(result).toBeLessThan(max);
 });
