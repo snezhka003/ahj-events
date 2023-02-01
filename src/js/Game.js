@@ -8,14 +8,12 @@ export default class Game {
 
   getRandom(max) {
     this.name = 'getRandom';
-
     return Math.floor(Math.random() * max);
   }
 
   resetClass() {
     this.name = 'resetClass';
     const cell = Array.from(document.querySelectorAll('div[data-cell]'));
-
     cell.forEach((item) => {
       const el = item;
       el.className = 'cell';
@@ -25,13 +23,11 @@ export default class Game {
   changeCheck() {
     const span = document.querySelector('.header_check span');
     span.textContent = this.counter;
-
     return span.textContent;
   }
 
   addEvent() {
     const cell = Array.from(document.querySelectorAll('div[data-cell]'));
-
     cell.forEach((el) => {
       el.addEventListener('click', () => {
         if (el.classList.contains('active')) {
@@ -46,7 +42,6 @@ export default class Game {
     const max = fieldSize ** 2;
     const i = this.getRandom(max);
     const cell = document.querySelector(`div[data-cell='${i}']`);
-
     this.resetClass();
     cell.classList.add('active');
     cell.append(img);
@@ -54,8 +49,8 @@ export default class Game {
 
   start() {
     const fieldSize = 4;
-    const field = new Board(fieldSize);
-    const img = field.start(this.img);
+    const board = new Board(fieldSize);
+    const img = board.start(this.img);
     this.addEvent();
 
     setInterval(() => {

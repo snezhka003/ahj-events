@@ -3,9 +3,10 @@ const HtmlWebPackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
-  entry: './src/index.js',
+  target: 'web',
   output: {
     path: path.resolve(__dirname, 'dist'),
+    publicPath: '',
   },
   module: {
     rules: [
@@ -31,7 +32,11 @@ module.exports = {
         ],
       },
       {
-        test: /\.png/,
+        test: /\.(?:ico|gif|png|jpg|jpeg)$/i,
+        type: "asset/resource",
+      },
+      {
+        test: /\.svg$/,
         type: 'asset/resource',
       },
     ],
@@ -42,7 +47,8 @@ module.exports = {
       filename: './index.html',
     }),
     new MiniCssExtractPlugin({
-      filename: './style.css',
+      filename: '[name].css',
+      chunkFilename: '[id].css',
     }),
   ],
 };
