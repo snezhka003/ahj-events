@@ -1,5 +1,4 @@
-import Game from './Game';
-import imgSrc from '../img/goblin.png';
+import GamePlay from './GamePlay';
 
-const game = new Game(imgSrc);
-game.start();
+const game = new GamePlay();
+game.startGame();

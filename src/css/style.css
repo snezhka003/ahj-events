@@ -1,37 +1,33 @@
-html, body {
-	height: 100%;
-	width: 100%;
-  }
-  
-  * {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-  }
-  
-  .header {
-	  text-align: center;
-  }
-  
-  .game_field {
-	  margin: auto;
-  }
-  
-  .field_container {
-	  display: flex;
-	  flex-wrap: wrap;
-	  justify-content: center;
-  
-	  width: 700px;
-	  margin:  auto;
-  }
-  
-  .cell {
-	  display:  flex;
-	  justify-content: center;
-	  align-items: center;
-	  width: 150px;
-	  height: 150px;
-	  margin: 10px;
-	  background-color: #9b9ca5;
-  }
+* {
+    box-sizing: border-box;
+}
+
+.header {
+	text-align: center;
+}
+
+.board {
+    display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+
+	width: 700px;
+	margin:  auto;
+}
+
+.cell {
+    display:  flex;
+	justify-content: center;
+	align-items: center;
+	width: 150px;
+	height: 150px;
+	margin: 10px;
+	background-color: #9b9ca5;
+}
+
+.active {
+    background-image: url(../img/goblin.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
